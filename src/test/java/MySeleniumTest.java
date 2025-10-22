@@ -3,6 +3,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,6 +20,8 @@ public class MySeleniumTest {
 
         driver.get("https://litecart.stqa.ru/en/");
 
+        driver.manage().window().maximize();
+
         WebElement cartLink = driver.findElement(By.id("cart"));
 
         cartLink.click();
@@ -32,6 +35,8 @@ public class MySeleniumTest {
         searchBox.sendKeys("Green Duck");
 
         searchBox.sendKeys(Keys.ENTER);
+
+        Actions actions = new Actions(driver);
 
 //        List<WebElement> rubberDuckImages = driver.findElements(By.className("image-wrapper"));
 //

@@ -20,6 +20,8 @@ public class TestNG {
 
         driver.get("https://the-internet.herokuapp.com");
 
+        driver.manage().window().maximize();
+
         List <WebElement> Links = (List<WebElement>) driver.findElements(By.cssSelector("#content ul a"));
 
         WebElement Link = Links.get(9);
