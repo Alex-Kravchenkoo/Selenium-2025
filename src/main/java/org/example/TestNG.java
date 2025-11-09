@@ -1,3 +1,5 @@
+package org.example;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -5,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -18,6 +19,8 @@ public class TestNG {
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
 
         driver.get("https://the-internet.herokuapp.com");
+
+        driver.manage().window().maximize();
 
         List <WebElement> Links = (List<WebElement>) driver.findElements(By.cssSelector("#content ul a"));
 
