@@ -38,6 +38,8 @@ public class MySeleniumTest {
 
         Actions actions = new Actions(driver);
 
+        driver.quit();
+
 //        List<WebElement> rubberDuckImages = driver.findElements(By.className("image-wrapper"));
 //
 //        Assert.assertEquals(rubberDuckImages.size(), 6)
