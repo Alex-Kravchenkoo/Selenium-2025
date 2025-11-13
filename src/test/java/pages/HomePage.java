@@ -7,7 +7,7 @@ public class HomePage {
 
 
     private By categoryButton = By.cssSelector("a[href$='rubber-ducks-c-1/']");
-    private By GreenDuck = By.xpath("//div[@id='box-most-popular']//div[@class='name' and text()='Green Duck']");
+    private By GreenDuck = By.xpath("//*[@id='box-most-popular']//div[@class='name' and text()='Green Duck']");
 
     private WebDriver driver;
 
