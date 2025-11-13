@@ -1,4 +1,4 @@
-package objectPgObj;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class GreenDuckPage {
 
     private By addToCartButton = By.name("add_cart_product");
-    private By cartQuantity = By.xpath("//*[@id='cart']/a[2]/span[1]");
-    private By cart = By.xpath("//*[@id='cart']/a[2]/strong");
+    private By cartQuantity = By.cssSelector("span.quantity");
+    private By cart = By.cssSelector("#cart a.link");
 
     private WebDriver driver;
 

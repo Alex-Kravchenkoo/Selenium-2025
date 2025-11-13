@@ -1,8 +1,9 @@
-package objectPgObj;
+package tests;
 
+import pages.LoginPage;
+import pages.LoginResultPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class LostPasswordTest {
+public class LoginTest {
 
     private WebDriver driver;
 
@@ -32,23 +33,20 @@ public class LostPasswordTest {
     }
 
     @Test
-    public void LostPasswordWithWrongAccountTest() {
+    public void LoginWithDisabledAccountTest() {
         LoginPage LoginPage = new LoginPage(driver);
         LoginResultPage loginResultPage = new LoginResultPage(driver);
 
-        LoginPage.enterLogin("alex_kravchenko@mail.ru");
-        LoginPage.clickLostPasswordButton();
+        LoginPage.login("alex_kravchenko@mail.ru", "wertgyhjk");
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(loginResultPage.errorMessageIsVisible());//Проверяем что ошибка видна пользователю
         softAssert.assertEquals(loginResultPage.getErrorMessageText(),
-                "The email address does not exist in our database.");
+                "Wrong password or the account is disabled, or does not exist");
 
         softAssert.assertAll();//Выводим результат по списку проверок
 //        LoginPage.enterLogin("alex_kravchenko@mail.ru");
 //        LoginPage.enterPassword("wertgyhjk");
 //        LoginPage.clickLoginButton();
-
     }
 }
-
