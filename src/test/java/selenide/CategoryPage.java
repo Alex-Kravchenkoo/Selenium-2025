@@ -1,10 +1,7 @@
-package pages;
+package selenide;
 
-import org.openqa.selenium.By;
-import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.ElementsCollection;
-
-import java.util.List;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;

@@ -1,13 +1,13 @@
-package tests;
+package selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import pages.CategoryPage;
-import pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.CategoryPage;
+import pages.HomePage;
 
 import java.util.List;
 import java.util.stream.Collectors;

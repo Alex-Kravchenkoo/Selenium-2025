@@ -1,6 +1,7 @@
-package pages;
+package selenide;
 
 import org.openqa.selenium.By;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class HomePage {

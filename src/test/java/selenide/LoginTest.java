@@ -1,16 +1,17 @@
-package tests;
+package selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import pages.LoginPage;
-import pages.LoginResultPage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pages.LoginPage;
+import pages.LoginResultPage;
 
 
-public class PositiveLoginTest {
+public class LoginTest {
+
 
     @BeforeMethod
     public void setup() {
@@ -26,17 +27,20 @@ public class PositiveLoginTest {
     }
 
     @Test
-    public void LoginWithCorrectAccountTest() {
+    public void LoginWithDisabledAccountTest() {
         LoginPage LoginPage = new LoginPage();
         LoginResultPage loginResultPage = new LoginResultPage();
 
-        LoginPage.login("c9tpp@comfythings.com", "ASDqwe");
+        LoginPage.login("alex_kravchenko@mail.ru", "wertgyhjk");
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(loginResultPage.successMessageIsVisible());//Проверяем что ошибка видна пользователю
-        softAssert.assertEquals(loginResultPage.getSuccessMessageText(),
-                "You are now logged in as asdscf dsadsa.");
+        softAssert.assertTrue(loginResultPage.errorMessageIsVisible());//Проверяем что ошибка видна пользователю
+        softAssert.assertEquals(loginResultPage.getErrorMessageText(),
+                "Wrong password or the account is disabled, or does not exist");
 
         softAssert.assertAll();//Выводим результат по списку проверок
+//        LoginPage.enterLogin("alex_kravchenko@mail.ru");
+//        LoginPage.enterPassword("wertgyhjk");
+//        LoginPage.clickLoginButton();
     }
 }
