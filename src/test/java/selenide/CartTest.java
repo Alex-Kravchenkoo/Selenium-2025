@@ -41,7 +41,11 @@ public class CartTest {
 
         greenDuckPage.clickCart();
 
-        String name = cartPage.getPurchaseNameText();
-        Assert.assertEquals(name, "Green Duck", "Текст purchaseName должен быть 'Green Duck'");
+        String expectedProductName = "Green Duck";
+        String actualName = cartPage.getPurchaseNameText();
+        Assert.assertEquals(
+                actualName,
+                expectedProductName,
+                "Текст purchaseName должен быть '" + expectedProductName + "'");
     }
 }

@@ -19,7 +19,7 @@ public class LoginResultPage {
     }
 
     public boolean successMessageIsVisible() {
-        return $(successMessage).isDisplayed(); //для проверки, что уведомление об ошибке отображается
+        return $(successMessage).isDisplayed(); //для проверки, что уведомление об успехе отображается
     }
 
     public String getSuccessMessageText() {
