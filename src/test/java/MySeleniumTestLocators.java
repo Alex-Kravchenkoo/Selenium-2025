@@ -26,7 +26,7 @@ public class MySeleniumTestLocators {
 
         driver.manage().window().maximize();
 
-            //Тест 1
+        //Тест 1
 
         WebElement home = driver.findElement(By.cssSelector("i.fa.fa-home"));
 

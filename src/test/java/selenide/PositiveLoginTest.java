@@ -2,6 +2,7 @@ package selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import jdk.jfr.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -25,7 +26,8 @@ public class PositiveLoginTest {
         Selenide.closeWebDriver();
     }
 
-    @Test
+    @Description("Login with correct data, validate greeting message")
+    @Test(description = "Login with correct data")
     public void LoginWithCorrectAccountTest() {
         LoginPage LoginPage = new LoginPage();
         LoginResultPage loginResultPage = new LoginResultPage();
@@ -33,7 +35,7 @@ public class PositiveLoginTest {
         LoginPage.login("c9tpp@comfythings.com", "ASDqwe");
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(loginResultPage.successMessageIsVisible());//Проверяем что ошибка видна пользователю
+        softAssert.assertTrue(loginResultPage.successMessageIsVisible());//Проверяем что уведомление видно пользователю
         softAssert.assertEquals(loginResultPage.getSuccessMessageText(),
                 "You are now logged in as asdscf dsadsa.");
 

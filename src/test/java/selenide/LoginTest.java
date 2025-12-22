@@ -2,6 +2,7 @@ package selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import jdk.jfr.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -26,7 +27,8 @@ public class LoginTest {
         Selenide.closeWebDriver();
     }
 
-    @Test
+    @Description("Attempt to login with wrong account and validate that error message appears and contains correct text")
+    @Test(description = "Login with wrong account")
     public void LoginWithDisabledAccountTest() {
         LoginPage LoginPage = new LoginPage();
         LoginResultPage loginResultPage = new LoginResultPage();

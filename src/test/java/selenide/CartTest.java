@@ -2,6 +2,7 @@ package selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -11,6 +12,7 @@ import pages.GreenDuckPage;
 import pages.HomePage;
 
 import static com.codeborne.selenide.Selenide.$;
+
 
 public class CartTest {
 
@@ -27,7 +29,8 @@ public class CartTest {
         Selenide.closeWebDriver();
     }
 
-    @Test
+    @Description("This test validates that when I adds a duck to the cart, the correct item is displayed in the cart")
+    @Test(description = "Add duck to the cart")
     public void BuyingAGreenDuckTest() {
         HomePage homePage = new HomePage();
         GreenDuckPage greenDuckPage = new GreenDuckPage();

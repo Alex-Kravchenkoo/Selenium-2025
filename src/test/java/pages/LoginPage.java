@@ -1,11 +1,12 @@
 package pages;
 
 import org.openqa.selenium.By;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage {
 
-    private  By loginInput = By.name("email");
+    private By loginInput = By.name("email");
     private By passwordInput = By.name("password");
     private By loginButton = By.name("login");
     private By lostPasswordButton = By.name("lost_password");

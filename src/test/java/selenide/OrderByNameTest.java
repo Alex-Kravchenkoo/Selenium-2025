@@ -2,6 +2,7 @@ package selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -27,7 +28,8 @@ public class OrderByNameTest {
         Selenide.closeWebDriver();
     }
 
-    @Test
+    @Description("This test sorts ducks by name and verifies the correctness  of the order")
+    @Test(description = "Order by name")
     public void OrderByName() {
         HomePage homePage = new HomePage();
         CategoryPage categoryPage = new CategoryPage();
