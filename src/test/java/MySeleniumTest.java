@@ -1,3 +1,6 @@
+import com.epam.reportportal.testng.ReportPortalTestNGListener;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -5,14 +8,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
 
+@Epic("Selenium training tests")
+@Feature("First Selenium test")
+@Listeners({ReportPortalTestNGListener.class})
 public class MySeleniumTest {
     @Test
-    public void firstSeleniumTest(){
+    public void firstSeleniumTest() {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
@@ -37,6 +44,8 @@ public class MySeleniumTest {
         searchBox.sendKeys(Keys.ENTER);
 
         Actions actions = new Actions(driver);
+
+        driver.quit();
 
 //        List<WebElement> rubberDuckImages = driver.findElements(By.className("image-wrapper"));
 //

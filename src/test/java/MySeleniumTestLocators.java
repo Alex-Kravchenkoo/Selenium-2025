@@ -6,11 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class MySeleniumTestLocators {
+
+
     @Test
     public void firstSeleniumTest() {
 
@@ -22,6 +25,7 @@ public class MySeleniumTestLocators {
         driver.get("https://litecart.stqa.ru/en/");
 
         driver.manage().window().maximize();
+
         //Тест 1
 
         WebElement home = driver.findElement(By.cssSelector("i.fa.fa-home"));
@@ -31,6 +35,8 @@ public class MySeleniumTestLocators {
         String pageTitle = driver.getTitle();
 
         Assert.assertEquals(pageTitle, "Online Store | My Store");
+
+        driver.quit();
 
 
 //        Тест 2
